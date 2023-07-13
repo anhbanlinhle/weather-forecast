@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { 
   View, 
   Text, 
@@ -8,7 +8,7 @@ import {
 
 const Counter = () => {
   const { container, title, button } = styles
-  let count = 0 
+  const [count, setCount] = useState(0)
   return (
     <View style={container}>
       <Text style={title}>{`Counting: ${count}`}</Text>
@@ -16,20 +16,14 @@ const Counter = () => {
         <Button
           color='red'
           title="Increase"
-          onPress={() => {
-            count++
-            console.log(count)
-          }}
+          onPress={() => setCount(count + 1)}
         />
       </View>
       <View style={button} >
         <Button
           color={'blue'}
           title="Decrease"
-          onPress={() => {
-            count--
-            console.log(count)
-          }}
+          onPress={() => setCount(count - 1)}
         />
       </View>
     </View>

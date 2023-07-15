@@ -34,11 +34,11 @@ const CurrentWeather = ({ weatherData }) => {
     <SafeAreaView style={[wrapper, {backgroundColor: weatherType[weatherCondition].backgroundColor}]}>
       <View style={container}>
         <Feather name={weatherType[weatherCondition].icon} size={100} color="black" />
-        <Text style={temperature}>{temp}</Text>
-        <Text style={feels}>Feels like {feels_like}</Text>
+        <Text style={temperature}>{temp}°C</Text>
+        <Text style={feels}>Feels like {feels_like}°C</Text>
         <RowText
-          firstMessage={`High: ${temp_max}`}
-          secondMessage={`Low: ${temp_min}`}
+          firstMessage={`High: ${temp_max}°C `}
+          secondMessage={`Low: ${temp_min}°C`}
           container={highLowWrapper}
           firstMessageStyle={highLow}
           secondMessageStyle={highLow}

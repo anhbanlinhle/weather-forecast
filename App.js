@@ -8,7 +8,6 @@ import { useGetWeather } from './src/hooks/useGetWeather'
 const App = () => {
   const { container } = styles
   const [loading, errorMsg, weather] = useGetWeather()
-  // console.log(loading, errorMsg, weather)
 
   if (weather && weather.list) {
     return (

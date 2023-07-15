@@ -42,7 +42,6 @@ const Tabs = ({ weather }) => {
       </Tab.Screen>
       <Tab.Screen 
         name="Upcoming" 
-        component={UpcomingWeather}
         options={{
           tabBarIcon: ({ focused }) =>
             <Feather
@@ -51,7 +50,9 @@ const Tabs = ({ weather }) => {
               color={focused ? 'blue' : 'black'}
             />
         }}
-      />
+      >
+        {() => <UpcomingWeather weatherData={weather.list} />}
+      </Tab.Screen>
       <Tab.Screen 
         name="City" 
         component={CityDetail} 

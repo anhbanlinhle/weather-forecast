@@ -82,5 +82,3 @@ const styles = StyleSheet.create({
 })
 
 export default CurrentWeather
-
-// api key: 216c273d08488306bc5417ba9acaad9f

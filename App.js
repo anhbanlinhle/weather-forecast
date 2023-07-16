@@ -4,23 +4,29 @@ import { NavigationContainer } from '@react-navigation/native'
 import Tabs from './src/components/Tabs'
 import * as Location from 'expo-location'
 import { useGetWeather } from './src/hooks/useGetWeather'
+import ErrorItem from './src/components/ErrorItem'
+import Button from './src/hooks/Button'
 
 const App = () => {
   const { container } = styles
   const [loading, errorMsg, weather] = useGetWeather()
 
-  if (weather && weather.list) {
+  if (weather && weather.list && !loading) {
     return (
-      <NavigationContainer>
-        <Tabs weather={weather} />
-        {/* <Counter /> */}
-      </NavigationContainer>
+      // <NavigationContainer>
+      //   <Tabs weather={weather} />
+      // </NavigationContainer>
+      <Button />
     )
   }
 
   return (
     <View style={container}>
-      <ActivityIndicator size={'large'} color={'pink'} />
+      {
+        errorMsg
+        ?  <ErrorItem />
+        : <ActivityIndicator size={'large'} color={'pink'} />
+      }
     </View>
   )
 }

@@ -13,10 +13,10 @@ const ListItem = (props) => {
   const { item, date, temp, dateTexWrapper } = Styles
   return (
     <View style={item}>
-      <Feather name={weatherType[condition].icon} size={50} color="white" />
+      <Feather name={weatherType[condition]?.icon} size={50} color="white" />
       <View style={dateTexWrapper}>
         <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
-        <Text style={date}>{moment(dt_txt).format('h:mm:ss a')}</Text>
+        <Text style={date}>{moment(dt_txt).format('h:mm a')}</Text>
       </View>
       
       <Text style={temp}>{Math.round(min)}°C - {Math.round(max)}°C</Text>
@@ -38,11 +38,11 @@ const Styles = StyleSheet.create({
   },
   temp: {
     fontSize: 20,
-    color: 'red'
+    color: 'white'
   },
   date: {
     fontSize: 20,
-    color: 'red'
+    color: 'white'
   },
   dateTexWrapper: {
     flexDirection: 'column',
